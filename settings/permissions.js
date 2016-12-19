@@ -1,8 +1,6 @@
 'use strict'
 
 const Roles = require('koa-roles')
-const passport = require('koa-passport')
-const co = require('co')
 
 // Error handling
 let user = new Roles({ failureHandler: function* (action) {

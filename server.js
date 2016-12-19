@@ -15,18 +15,22 @@ jsdom.env({
   }
 })
 
-const app = module.exports = require('koa')()
+const app = require('koa')()
 const middleware = require('./settings/middleware')
+const models = require('./models')
+const thinky = require('./models/thinky')
+const user = require(`./settings/permissions`)
 
-// auth rotues
+// auth
 const auth = require('./settings/auth')
+const Router = require('koa-router')
 const api = new Router()
 api
   .post('/login', auth.login)
   .post('/signup', auth.create)
   .get('/logout', auth.logout)
 
-
+// app
 app.keys = [process.env.SECRET]
 app
   .use(middleware.logger)
@@ -39,3 +43,7 @@ app
   .use(middleware.render)
   .use(middleware.compress)
   .use(api.middleware())
+
+ module.exports = {
+   app, thinky, models, user
+ }

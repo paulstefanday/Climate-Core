@@ -57,7 +57,7 @@ exports.session = genericSession({
   defer: true
 })
 
-exports.permissions = require(`${__base}/api/settings/permissions`).middleware()
+exports.permissions = require(`${__base}/settings/permissions`).middleware()
 
 exports.bodyparser = require('koa-bodyparser')()
 
