@@ -1,5 +1,5 @@
 {
-  "name": "tracker-core",
+  "name": "climate-core",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -43,5 +43,5 @@
   "standard": {
     "parser": "babel-eslint"
   },
-  "private": true
+  "private": false
 }
