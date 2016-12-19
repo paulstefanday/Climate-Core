@@ -1,0 +1,8 @@
+extends ./_layout
+
+block content
+  +h1("Sorry, Your article has been rejected")
+  +h2("Please try submitting it again")
+  p Submission Title: #{body.submission.title}
+  p Reason: #{body.message}
+  p Please contact #{body.reviewer.username} if you have any question.

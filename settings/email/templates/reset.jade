@@ -1,0 +1,10 @@
+extends ./_layout
+
+block content
+  +jumbotron(
+    'Password Reset',
+    'You have requested a reset',
+    'Click on the button below to confirm your reset and login with your new password.')
+
+  br
+  +button("http://app.climatetracker.org/api/app/reset/"+body.user.resetToken, "Reset")

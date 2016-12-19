@@ -1,0 +1,10 @@
+extends ./_layout
+
+block content
+  +jumbotron(
+    'Thanks for joining', 
+    'The "'+body.competition.title+'" competition', 
+    'Get started with your submission by clicking the button below.')
+
+  br
+  +button("http://app.climatetracker.org/dashboard/"+body.competition.id, "Learn More")

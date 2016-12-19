@@ -1,0 +1,78 @@
+mixin button(url, text)
+  div(style='text-align:center;')
+    <!--[if mso]> <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#{url}" style="height:53px;v-text-anchor:middle;width:200px;font-size:16px;" arcsize="8%" stroke="f" fillcolor="#ff7800"><w:anchorlock/><center>><![endif]-->
+    a(href='#{url}' style='background-color:#ff7800;border-radius:4px;color:#ffffff !important;display:inline-block;font-family:sans-serif;font-size:13px;font-weight:bold;line-height:53px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;font-size:16px;') #{text}
+    <!--[if mso]> </center> </v:roundrect> <![endif]-->
+
+mixin spacer()
+  br
+  br
+  hr
+  br
+  br
+
+mixin jumbotron(h1, h2, body)
+  h1.size-30(style='Margin-top: 0;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #8b8e94;font-size: 30px;line-height: 38px;text-align: center;')=h1
+  h2.size-24(style='Margin-top: 20px;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #28292b;font-size: 24px;line-height: 32px;text-align: center;')=h2
+  p.size-16(style='Margin-top: 16px;Margin-bottom: 20px;font-size: 16px;line-height: 24px;text-align: center;')=body
+
+mixin p(text)
+  p.size-16(style='Margin-top: 16px;Margin-bottom: 20px;font-size: 16px;line-height: 24px;text-align: center;')=text
+
+mixin h1(text)
+  h1.size-30(style='Margin-top: 0;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #8b8e94;font-size: 30px;line-height: 38px;text-align: center;')=text
+
+mixin h2(text)
+  h2.size-24(style='Margin-top: 20px;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #28292b;font-size: 24px;line-height: 32px;text-align: center;')=text
+
+
+doctype html
+html(xmlns='http://www.w3.org/1999/xhtml')
+  head
+    meta(http-equiv='Content-Type' content='text/html; charset=utf-8')
+    <!--[if !mso]><!-->
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    <!--<![endif]-->
+    meta(name='viewport' content='width=device-width')
+    title
+    <!--[if !mso]><!-->
+    style(type='text/css').
+      @import url(https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic);
+    link(href='https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic' rel='stylesheet' type='text/css')
+    <!--<![endif]-->
+    style(type='text/css')
+      include styles.css
+    meta(name='robots' content='noindex,nofollow')
+    meta(property='og:title' content='Test Transact')
+
+  <!--[if mso]><body class="mso"><![endif]-->
+  <!--[if !mso]><!--><body class="half-padding" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #ECECEC;"><!--<![endif]-->
+
+  .wrapper(style='background-color: #ECECEC;')
+    table(style='border-collapse: collapse;table-layout: fixed;color: #b3b3b3;font-family: Roboto,Tahoma,sans-serif;' align='center')
+      tbody
+        tr
+          td.preheader__snippet(style='padding: 20px 0 10px 0;vertical-align: top;' width='300')
+          td.preheader__webversion(style='text-align: right;padding: 20px 0 10px 0;vertical-align: top;' width='300')
+    table.layout.layout--no-gutter(style='border-collapse: collapse;table-layout: fixed;Margin-left: auto;Margin-right: auto;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #ffffff;border-radius: 5px;overflow:hidden;' align='center' emb-background-style='')
+      tbody
+        tr
+          td.column(style='padding: 0;text-align: left;vertical-align: top;color: #28292b;font-size: 14px;line-height: 21px;font-family: Roboto,Tahoma,sans-serif;' width='600')
+            .image(style='font-size: 12px;font-style: normal;font-weight: 400;background-color:#000' align='center')
+              a(href='' style='text-decoration: none' target='_blank')
+                img.gnd-corner-image.gnd-corner-image-center.gnd-corner-image-top(style='display: block;border: 0;padding:55px 0 50px;' src='http://app.climatetracker.org/images/logo-white-sm.png' width='226' height='24')
+            div(style='Margin-left: 20px;Margin-right: 20px;Margin-top: 20px;')
+              div(style='line-height:20px;font-size:1px')  
+            div(style='Margin-left: 20px;Margin-right: 20px;')
+              // Content
+              block content
+
+            div(style='Margin-left: 30px;Margin-right: 30px;')
+              div(style='line-height:60px;font-size:1px')  
+    div(style='font-size: 30px;line-height: 30px;mso-line-height-rule: exactly;')
+    table(style='border-collapse: collapse;table-layout: fixed;color: #b3b3b3;font-family: Roboto,Tahoma,sans-serif;' align='center')
+      tbody
+        tr
+          td.preheader__snippet(style='padding: 20px 0 10px 0;vertical-align: top;' width='300')
+          td.preheader__webversion(style='text-align: right;padding: 20px 0 10px 0;vertical-align: top;' width='300')
+  </body>

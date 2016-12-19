@@ -1,0 +1,29 @@
+extends ./_layout
+
+block content
+  +h1("Your article has been reviewed!")
+  br
+  p 
+    b Content: 
+    | #{body.review.content}/#{ body.review.max }
+    br
+    b Style: 
+    | #{body.review.style}/#{ body.review.max }
+    br
+    b Originality: 
+    | #{body.review.originality}/#{ body.review.max }
+    br
+    b Reach: 
+    | #{body.review.reach}/#{ body.review.max }
+    br
+    b Engagement: 
+    | #{body.review.engagement}/#{ body.review.max }
+    br
+    b Comments:
+    br
+    | #{ body.review.comment }
+  
+  +h2( "Total " + body.review.total + "/" + ( body.review.max * 5 ) )
+
+  +spacer()
+  +button("http://app.climatetracker.org/dashboard/"+body.review.competitionId+"/steps", "View progress")
